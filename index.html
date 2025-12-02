@@ -118,7 +118,7 @@
             <div class="project-content">
               <h3 class="project-title">Project One</h3>
               <p class="project-desc">프로젝트 섹션1</p>
-              <a href="#" class="project-link" target="_blank">Learn More</a>
+              <a href="#" class="project-link">Learn More</a>
             </div>
           </div>
           <!-- Project Card 2 -->
@@ -131,7 +131,7 @@
             <div class="project-content">
               <h3 class="project-title">Project Two</h3>
               <p class="project-desc">프로젝트 섹션2.</p>
-              <a href="#" class="project-link" target="_blank">Learn More</a>
+              <a href="#" class="project-link">Learn More</a>
             </div>
           </div>
           <!-- Project Card 3 -->
@@ -144,12 +144,36 @@
             <div class="project-content">
               <h3 class="project-title">Project Three</h3>
               <p class="project-desc">프로젝트 섹션3.</p>
-              <a href="#" class="project-link" target="_blank">Learn More</a>
+              <a href="#" class="project-link">Learn More</a>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Project details overlay -->
+    <div id="project-overlay" class="project-overlay" aria-hidden="true">
+      <div
+        class="project-overlay__content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="project-overlay-title"
+      >
+        <button class="project-overlay__close" aria-label="Close project details">&times;</button>
+        <div class="project-overlay__body">
+          <img
+            id="project-overlay-image"
+            class="project-overlay__image"
+            src=""
+            alt=""
+          />
+          <div class="project-overlay__text">
+            <h3 id="project-overlay-title"></h3>
+            <p id="project-overlay-desc"></p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Contact section -->
     <section id="contact" class="section contact-section">
