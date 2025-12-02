@@ -77,4 +77,64 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   );
   revealElements.forEach(el => revealObserver.observe(el));
+
+  // Project overlay modal
+  const projectOverlay = document.getElementById('project-overlay');
+  const overlayTitle = document.getElementById('project-overlay-title');
+  const overlayDesc = document.getElementById('project-overlay-desc');
+  const overlayImage = document.getElementById('project-overlay-image');
+  const overlayCloseBtn = projectOverlay?.querySelector('.project-overlay__close');
+  const projectLinks = document.querySelectorAll('.project-link');
+
+  const closeOverlay = () => {
+    if (!projectOverlay) return;
+    projectOverlay.classList.remove('open');
+    projectOverlay.setAttribute('aria-hidden', 'true');
+    body.classList.remove('modal-open');
+  };
+
+  const openOverlay = details => {
+    if (!projectOverlay || !overlayTitle || !overlayDesc || !overlayImage) return;
+
+    overlayTitle.textContent = details.title;
+    overlayDesc.textContent = details.description;
+    overlayImage.src = details.imageSrc || '';
+    overlayImage.alt = details.imageAlt || details.title || 'Project preview';
+
+    projectOverlay.classList.add('open');
+    projectOverlay.setAttribute('aria-hidden', 'false');
+    body.classList.add('modal-open');
+    overlayCloseBtn?.focus();
+  };
+
+  projectLinks.forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      const card = link.closest('.project-card');
+
+      if (!card) return;
+
+      const title = card.querySelector('.project-title')?.textContent?.trim() || 'Project';
+      const description = card.querySelector('.project-desc')?.textContent?.trim() || '';
+      const image = card.querySelector('.project-image');
+      const imageSrc = image?.getAttribute('src') || '';
+      const imageAlt = image?.getAttribute('alt') || `${title} preview`;
+
+      openOverlay({ title, description, imageSrc, imageAlt });
+    });
+  });
+
+  overlayCloseBtn?.addEventListener('click', closeOverlay);
+
+  projectOverlay?.addEventListener('click', event => {
+    if (event.target === projectOverlay) {
+      closeOverlay();
+    }
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && projectOverlay?.classList.contains('open')) {
+      closeOverlay();
+    }
+  });
 });
