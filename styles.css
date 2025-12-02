@@ -1,0 +1,379 @@
+/*
+ * Main stylesheet for the personal portfolio.
+ *
+ * This file contains variables and reusable classes, along with responsive
+ * layout rules to ensure the site looks good on various screen sizes.
+ */
+
+/* CSS Variables for easy theming */
+:root {
+  --color-bg: #f9f9fb;
+  --color-bg-dark: #0f172a;
+  --color-primary: #6366f1;
+  --color-secondary: #a855f7;
+  --color-text: #1f2937;
+  --color-text-dark: #e2e8f0;
+  --color-accent: #14b8a6;
+  --header-height: 64px;
+  --max-width: 1080px;
+}
+
+/* Dark mode variables applied when .dark-mode class is on the body */
+.dark-mode {
+  --color-bg: var(--color-bg-dark);
+  --color-text: var(--color-text-dark);
+}
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Header styles */
+#header {
+  width: 100%;
+  background: var(--color-bg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-list a:hover {
+  color: var(--color-primary);
+}
+
+.theme-toggle {
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* Hamburger for small screens */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle .hamburger,
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-text);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle .hamburger::before {
+  transform: translateY(-6px);
+}
+
+.nav-toggle .hamburger::after {
+  transform: translateY(4px);
+}
+
+/* Hero section */
+.hero-section {
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: #fff;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-title .highlight {
+  color: var(--color-accent);
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.primary-btn {
+  background-color: #fff;
+  color: var(--color-primary);
+}
+
+.primary-btn:hover {
+  background-color: #f3f4f6;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.secondary-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Generic section styles */
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.section-text {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* About section overrides */
+.about-section {
+  background-color: var(--color-bg);
+}
+
+/* Skills section */
+.skills-section {
+  background-color: #f8fafc;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.skill-item {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.skill-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-desc {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Projects section */
+.projects-section {
+  background-color: var(--color-bg);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 1rem;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.project-link {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.project-link:hover {
+  border-color: var(--color-primary);
+}
+
+/* Contact section */
+.contact-section {
+  background-color: #f8fafc;
+}
+
+.contact-list {
+  list-style: none;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.contact-list li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.contact-list a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .nav-list {
+    position: absolute;
+    top: var(--header-height);
+    right: 0;
+    width: 70%;
+    max-width: 300px;
+    background-color: var(--color-bg);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    gap: 1rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 998;
+  }
+
+  .nav-list.open {
+    transform: translateX(0);
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav {
+    flex: 1;
+    justify-content: flex-end;
+  }
+}

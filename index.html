@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Personal portfolio showcasing projects, skills and contact information." />
+    <title>My Portfolio</title>
+    <!-- Link to the main stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts for typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header with navigation bar -->
+    <header id="header">
+      <div class="container nav-container">
+        <a href="#" class="logo">My Portfolio</a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+        </button>
+        <nav class="nav" id="nav">
+          <ul class="nav-list">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+              <button
+                id="theme-toggle"
+                class="theme-toggle"
+                aria-label="Toggle dark mode"
+              >
+                🌙
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero section -->
+    <section id="hero" class="section hero-section">
+      <div class="container hero-content">
+        <h1 class="hero-title">Hello, I'm <span class="highlight">Your&nbsp;Name</span></h1>
+        <p class="hero-subtitle">A passionate developer ready to build great products</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn primary-btn">View My Work</a>
+          <a href="#contact" class="btn secondary-btn">Get In Touch</a>
+        </div>
+      </div>
+      <!-- Background image or illustration can be placed here -->
+    </section>
+
+    <!-- About section -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-text">
+          Welcome to my portfolio! Use this area to describe who you are and what you do.
+          You might mention your interests, your experience, and what motivates you.
+          This section is a great place to provide a short biography so visitors know more about you.
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills section -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+          <!-- Each skill item includes an icon, a title, and a short description -->
+          <div class="skill-item">
+            <div class="skill-icon">💻</div>
+            <h3 class="skill-title">Web Development</h3>
+            <p class="skill-desc">HTML, CSS, JavaScript, and modern frameworks</p>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon">📊</div>
+            <h3 class="skill-title">Data Analysis</h3>
+            <p class="skill-desc">Python, pandas, data visualization, machine learning basics</p>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon">⚙️</div>
+            <h3 class="skill-title">DevOps</h3>
+            <p class="skill-desc">Git, CI/CD pipelines, Docker, cloud deployment</p>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon">🎨</div>
+            <h3 class="skill-title">UI/UX Design</h3>
+            <p class="skill-desc">Wireframing, prototyping, user research, Figma</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects section -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+          <!-- Project Card 1 -->
+          <div class="project-card">
+            <img
+              src="https://via.placeholder.com/400x200?text=Project+1"
+              alt="Project 1 screenshot"
+              class="project-image"
+            />
+            <div class="project-content">
+              <h3 class="project-title">Project One</h3>
+              <p class="project-desc">Brief description of Project One. Explain what technologies were used and the goals of the project.</p>
+              <a href="#" class="project-link" target="_blank">Learn More</a>
+            </div>
+          </div>
+          <!-- Project Card 2 -->
+          <div class="project-card">
+            <img
+              src="https://via.placeholder.com/400x200?text=Project+2"
+              alt="Project 2 screenshot"
+              class="project-image"
+            />
+            <div class="project-content">
+              <h3 class="project-title">Project Two</h3>
+              <p class="project-desc">Brief description of Project Two. Talk about the problem solved and highlight outcomes.</p>
+              <a href="#" class="project-link" target="_blank">Learn More</a>
+            </div>
+          </div>
+          <!-- Project Card 3 -->
+          <div class="project-card">
+            <img
+              src="https://via.placeholder.com/400x200?text=Project+3"
+              alt="Project 3 screenshot"
+              class="project-image"
+            />
+            <div class="project-content">
+              <h3 class="project-title">Project Three</h3>
+              <p class="project-desc">Brief description of Project Three. Highlight your role and what you learned.</p>
+              <a href="#" class="project-link" target="_blank">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-text">Interested in working together? Reach out via email or connect on social media:</p>
+        <ul class="contact-list">
+          <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+          <li>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
+          <li>LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Your Name. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Link to the JavaScript file -->
+    <script src="script.js"></script>
+  </body>
+</html>
