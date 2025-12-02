@@ -7,6 +7,11 @@
     <title>My Portfolio</title>
     <!-- Link to the main stylesheet -->
     <link rel="stylesheet" href="styles.css" />
+    <!-- Animate.css library for ready‑made CSS animations -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <!-- Google Fonts for typography -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
@@ -45,9 +50,12 @@
     <!-- Hero section -->
     <section id="hero" class="section hero-section">
       <div class="container hero-content">
-        <h1 class="hero-title">Hello, I'm <span class="highlight">Your&nbsp;Name</span></h1>
-        <p class="hero-subtitle">A passionate developer ready to build great products</p>
-        <div class="hero-buttons">
+        <h1 class="hero-title animate__animated animate__fadeInDown">Hello, I'm
+          <span class="highlight">Your&nbsp;Name</span></h1>
+        <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+          A passionate developer ready to build great products
+        </p>
+        <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-2s">
           <a href="#projects" class="btn primary-btn">View My Work</a>
           <a href="#contact" class="btn secondary-btn">Get In Touch</a>
         </div>
@@ -57,7 +65,7 @@
 
     <!-- About section -->
     <section id="about" class="section about-section">
-      <div class="container">
+      <div class="container reveal">
         <h2 class="section-title">About Me</h2>
         <p class="section-text">
           Welcome to my portfolio! Use this area to describe who you are and what you do.
@@ -69,26 +77,26 @@
 
     <!-- Skills section -->
     <section id="skills" class="section skills-section">
-      <div class="container">
+      <div class="container reveal">
         <h2 class="section-title">Skills</h2>
         <div class="skills-grid">
           <!-- Each skill item includes an icon, a title, and a short description -->
-          <div class="skill-item">
+          <div class="skill-item reveal">
             <div class="skill-icon">💻</div>
             <h3 class="skill-title">Web Development</h3>
             <p class="skill-desc">HTML, CSS, JavaScript, and modern frameworks</p>
           </div>
-          <div class="skill-item">
+          <div class="skill-item reveal">
             <div class="skill-icon">📊</div>
             <h3 class="skill-title">Data Analysis</h3>
             <p class="skill-desc">Python, pandas, data visualization, machine learning basics</p>
           </div>
-          <div class="skill-item">
+          <div class="skill-item reveal">
             <div class="skill-icon">⚙️</div>
             <h3 class="skill-title">DevOps</h3>
             <p class="skill-desc">Git, CI/CD pipelines, Docker, cloud deployment</p>
           </div>
-          <div class="skill-item">
+          <div class="skill-item reveal">
             <div class="skill-icon">🎨</div>
             <h3 class="skill-title">UI/UX Design</h3>
             <p class="skill-desc">Wireframing, prototyping, user research, Figma</p>
@@ -99,11 +107,11 @@
 
     <!-- Projects section -->
     <section id="projects" class="section projects-section">
-      <div class="container">
+      <div class="container reveal">
         <h2 class="section-title">Projects</h2>
         <div class="projects-grid">
           <!-- Project Card 1 -->
-          <div class="project-card">
+          <div class="project-card reveal">
             <img
               src="https://via.placeholder.com/400x200?text=Project+1"
               alt="Project 1 screenshot"
@@ -116,7 +124,7 @@
             </div>
           </div>
           <!-- Project Card 2 -->
-          <div class="project-card">
+          <div class="project-card reveal">
             <img
               src="https://via.placeholder.com/400x200?text=Project+2"
               alt="Project 2 screenshot"
@@ -129,7 +137,7 @@
             </div>
           </div>
           <!-- Project Card 3 -->
-          <div class="project-card">
+          <div class="project-card reveal">
             <img
               src="https://via.placeholder.com/400x200?text=Project+3"
               alt="Project 3 screenshot"

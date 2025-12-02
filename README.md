@@ -7,8 +7,9 @@ This repository contains a simple, responsive personal portfolio website that yo
 * **Responsive layout:** Works on desktops, tablets, and mobile devices.
 * **Dark/light mode:** Users can toggle between light and dark themes. The preference is saved using `localStorage`.
 * **Mobile navigation:** A hamburger menu appears on smaller screens for easy navigation.
+* **Animated interactions:** Elements fade and slide into view as you scroll, powered by the Intersection Observer API (which lets code trigger animations when elements enter the viewport without hurting performance【668393367252197†L186-L238】), and the homepage uses ready‑made CSS animations from the Animate.css library【864181703388382†L160-L201】.
 * **Sections for about, skills, projects, and contact:** The structure can easily be expanded with more content or pages.
-* **Minimal external dependencies:** Only Google Fonts are used; you can remove or replace them if desired.
+* **Minimal external dependencies:** Only Google Fonts and Animate.css are used; you can remove or replace them if desired.
 
 ## Setup
 
