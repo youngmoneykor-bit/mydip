@@ -77,4 +77,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   );
   revealElements.forEach(el => revealObserver.observe(el));
+
+  (async function renderGithubActivity(){
+  const el = document.getElementById("ghActivity");
+  if (!el) return;
+
+  // index.html(루트) vs /projects/*, /blog/* 경로 차이 자동 처리
+  const inSubPage = location.pathname.includes("/projects/") || location.pathname.includes("/blog/");
+  const jsonPath = inSubPage ? "../assets/data/github.json" : "./assets/data/github.json";
+
+  try {
+    const r = await fetch(jsonPath, { cache: "no-store" });
+    const events = await r.json();
+
+    el.innerHTML = events.slice(0, 8).map(e => {
+      const repo = e.repo?.name ?? "";
+      const type = e.type ?? "Event";
+      const when = e.created_at ? new Date(e.created_at).toLocaleString() : "";
+      return `<li class="post-item">
+        <div><strong>${type}</strong> · ${repo}</div>
+        <div class="meta">${when}</div>
+      </li>`;
+    }).join("");
+  } catch (err) {
+    el.innerHTML = `<li class="post-item">활동을 불러오지 못했습니다.</li>`;
+  }
+})();
+
 });
