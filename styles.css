@@ -390,3 +390,31 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+#github-activity {
+  margin: 40px auto;
+}
+
+.gh-activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+  display: grid;
+  gap: 10px;
+}
+
+.gh-activity-item {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(0,0,0,0.04);
+}
+
+html[data-theme="dark"] .gh-activity-item {
+  background: rgba(255,255,255,0.08);
+}
+
+.gh-activity-meta {
+  opacity: 0.75;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
